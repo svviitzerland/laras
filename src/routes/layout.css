@@ -1,0 +1,248 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	/* --- Palet: ivory hangat, mocha, rose, emas tua, noir museum --- */
+	--color-ivory: #fbf8f5;
+	--color-shell: #f3ece5;
+	--color-sand: #e7dbd1;
+	--color-blush: #ecd6d2;
+	--color-rose: #c48d90;
+	--color-mocha: #8d766c;
+	--color-ink: #241d1b;
+	--color-noir: #14100f;
+	--color-noirsoft: #1e1817;
+	--color-gold: #bfa46f;
+	/* warna antara, dipakai saat terang melebur ke gelap */
+	--color-mist: #f7f1ec;
+	--color-dusk: #4a3a34;
+
+	--font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+	--font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	--ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		background-color: var(--color-ivory);
+		color: var(--color-ink);
+		font-family: var(--font-sans);
+		font-weight: 300;
+		overflow-x: hidden;
+		/* tinggi dokumen diatur sendiri oleh mesin gulir, jadi penjangkaran
+		   bawaan peramban harus dimatikan supaya posisi tidak melompat */
+		overflow-anchor: none;
+	}
+
+	button {
+		cursor: pointer;
+		text-align: inherit;
+	}
+
+	/* kursor bawaan disembunyikan hanya ketika kursor kustom aktif */
+	@media (pointer: fine) {
+		html.has-custom-cursor,
+		html.has-custom-cursor * {
+			cursor: none;
+		}
+	}
+
+	::selection {
+		background: var(--color-blush);
+		color: var(--color-ink);
+	}
+
+	::-webkit-scrollbar {
+		width: 9px;
+	}
+	::-webkit-scrollbar-track {
+		background: var(--color-shell);
+	}
+	::-webkit-scrollbar-thumb {
+		background: var(--color-sand);
+		border-radius: 99px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--color-rose);
+	}
+
+	:focus-visible {
+		outline: 1px solid var(--color-rose);
+		outline-offset: 4px;
+	}
+}
+
+@utility font-display {
+	font-family: var(--font-display);
+}
+
+/* Huruf kapital kecil berjarak — dipakai untuk label & plakat museum */
+@utility label-caps {
+	font-family: var(--font-sans);
+	font-size: 0.625rem;
+	font-weight: 400;
+	letter-spacing: 0.34em;
+	text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------
+   Sapuan stabilo per baris (dipicu oleh action `marker`).
+   Ditulis global karena span barisnya dibuat lewat JavaScript.
+   --------------------------------------------------------------- */
+.mark-line {
+	background-image: linear-gradient(
+		to right,
+		color-mix(in srgb, var(--color-blush) 85%, transparent),
+		color-mix(in srgb, var(--color-blush) 85%, transparent)
+	);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	/* sedikit meluber seperti tinta stabilo, tanpa menggeser tata letak */
+	padding: 0.16em 0.16em;
+	margin: 0 -0.16em;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	/* lajunya sengaja tenang, seperti tangan yang menarik spidol */
+	transition: background-size 1.6s cubic-bezier(0.42, 0.06, 0.2, 1) var(--mark-delay, 0ms);
+}
+.is-lit .mark-line {
+	background-size: 100% 100%;
+}
+
+/* ---------------------------------------------------------------
+   Animasi masuk (dipicu oleh action `reveal`)
+   --------------------------------------------------------------- */
+.reveal {
+	opacity: 0;
+	transform: translate3d(var(--rv-x, 0px), var(--rv-y, 30px), 0) scale(var(--rv-s, 1));
+	filter: blur(var(--rv-blur, 6px));
+	transition:
+		opacity 1.1s var(--ease-silk) var(--rv-delay, 0ms),
+		transform 1.2s var(--ease-silk) var(--rv-delay, 0ms),
+		filter 1.1s var(--ease-silk) var(--rv-delay, 0ms);
+	will-change: opacity, transform;
+}
+.reveal.is-in {
+	opacity: 1;
+	transform: none;
+	filter: blur(0);
+}
+
+/* Baris teks yang tersingkap dari balik tirai */
+.line-mask {
+	display: block;
+	overflow: hidden;
+	padding-bottom: 0.08em;
+}
+.line-mask > span {
+	display: block;
+	transform: translateY(115%);
+	transition: transform 1.25s var(--ease-silk) var(--rv-delay, 0ms);
+}
+.line-mask.is-in > span,
+.is-in .line-mask > span {
+	transform: translateY(0);
+}
+
+/* Garis tipis yang memanjang */
+.rule-grow {
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 1.4s var(--ease-silk) var(--rv-delay, 0ms);
+}
+.rule-grow.is-in {
+	transform: scaleX(1);
+}
+
+@keyframes float-slow {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-14px) rotate(0.5deg);
+	}
+}
+
+@keyframes drift {
+	0%,
+	100% {
+		transform: translate(0, 0) scale(1);
+	}
+	50% {
+		transform: translate(2%, -3%) scale(1.07);
+	}
+}
+
+@keyframes flicker {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	46% {
+		opacity: 0.93;
+	}
+	48% {
+		opacity: 0.74;
+	}
+	50% {
+		opacity: 0.96;
+	}
+	72% {
+		opacity: 0.86;
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@keyframes cue {
+	0% {
+		transform: translateY(-60%);
+		opacity: 0;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(60%);
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	.reveal,
+	.line-mask > span,
+	.rule-grow {
+		transition-duration: 0.01ms !important;
+		opacity: 1 !important;
+		transform: none !important;
+		filter: none !important;
+	}
+	.mark-line {
+		transition-duration: 0.01ms !important;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}

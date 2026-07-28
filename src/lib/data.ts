@@ -69,6 +69,34 @@ export const facets = [
 	}
 ];
 
+/**
+ * Petikan kalimat yang ditata seperti halaman buku. Nama Laras berdiri di
+ * kolom tengah dan posisinya tidak pernah bergeser, sementara kalimat di
+ * kiri dan kanannya berganti pada tiap baris. Nama itulah yang disapu
+ * stabilo ketika barisnya masuk layar.
+ *
+ * Ganti kalimatnya dengan yang sesuai. Yang perlu dijaga hanya satu hal,
+ * potongan kiri diakhiri tanpa titik dan potongan kanan melanjutkannya.
+ */
+export const refrain = [
+	{
+		before: 'Mikrofon berpindah ke tangan',
+		after: 'dan tempo acara langsung terjaga.'
+	},
+	{
+		before: 'Panitia biasanya memanggil',
+		after: 'sejak tahap penyusunan rundown.'
+	},
+	{
+		before: 'Tim pengembang mengenal',
+		after: 'sebagai orang yang paham dua sisi panggung.'
+	},
+	{
+		before: 'Di susunan acara, nama',
+		after: 'berarti pembukaan yang ringkas dan hangat.'
+	}
+];
+
 export type GalleryItem = {
 	id: string;
 	no: string;

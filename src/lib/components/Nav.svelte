@@ -158,7 +158,9 @@
 		grid-template-columns: 1fr auto 1fr;
 		align-items: center;
 		gap: 0.75rem;
-		padding: 0.5rem 0.6rem 0.5rem 0.5rem;
+		/* kiri dan kanan harus sama persis, kalau tidak deretan tautan
+		   di tengah ikut tergeser */
+		padding: 0.5rem;
 		border-radius: 999px;
 		border: 1px solid transparent;
 		transition:

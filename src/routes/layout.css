@@ -29,6 +29,12 @@
 		scroll-behavior: smooth;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		/* Scrollbar bawaan disembunyikan karena lebarnya memakan ruang di
+		   sisi kanan dan membuat seluruh isi halaman bergeser dari titik
+		   tengah jendela. Gulir tetap berjalan lewat roda tetikus, trackpad,
+		   dan papan ketik, sementara posisi baca ditunjukkan oleh cincin
+		   progres di monogram navigasi. */
+		scrollbar-width: none;
 	}
 
 	body {
@@ -61,17 +67,9 @@
 	}
 
 	::-webkit-scrollbar {
-		width: 9px;
-	}
-	::-webkit-scrollbar-track {
-		background: var(--color-shell);
-	}
-	::-webkit-scrollbar-thumb {
-		background: var(--color-sand);
-		border-radius: 99px;
-	}
-	::-webkit-scrollbar-thumb:hover {
-		background: var(--color-rose);
+		width: 0;
+		height: 0;
+		display: none;
 	}
 
 	:focus-visible {

@@ -13,6 +13,89 @@
 	/** satu baris koran, sengaja panjang supaya terpotong di kedua tepi layar */
 	const strip = (n = 3) => Array.from({ length: n }, pick).join(' ');
 
+	/**
+	 * Wajah huruf untuk tiap baris. Halaman koran tidak pernah memakai satu
+	 * gaya saja, ada badan berita, ada judul, ada baris pengantar berhuruf
+	 * kapital. Baris badan berita sengaja diulang beberapa kali supaya lebih
+	 * sering terpilih daripada judul.
+	 */
+	const looks = [
+		{
+			family: 'var(--font-display)',
+			size: 1,
+			weight: 400,
+			style: 'normal',
+			caps: 'none',
+			track: 0
+		},
+		{
+			family: 'var(--font-display)',
+			size: 1,
+			weight: 400,
+			style: 'normal',
+			caps: 'none',
+			track: 0
+		},
+		{
+			family: 'var(--font-display)',
+			size: 0.96,
+			weight: 400,
+			style: 'italic',
+			caps: 'none',
+			track: 0.01
+		},
+		{
+			family: 'var(--font-sans)',
+			size: 0.78,
+			weight: 300,
+			style: 'normal',
+			caps: 'none',
+			track: 0
+		},
+		{
+			family: 'var(--font-sans)',
+			size: 0.78,
+			weight: 300,
+			style: 'normal',
+			caps: 'none',
+			track: 0
+		},
+		// judul berita
+		{
+			family: 'var(--font-display)',
+			size: 1.32,
+			weight: 600,
+			style: 'normal',
+			caps: 'none',
+			track: -0.01
+		},
+		{
+			family: 'var(--font-sans)',
+			size: 1.02,
+			weight: 600,
+			style: 'normal',
+			caps: 'none',
+			track: -0.015
+		},
+		// baris pengantar
+		{
+			family: 'var(--font-sans)',
+			size: 0.62,
+			weight: 400,
+			style: 'normal',
+			caps: 'uppercase',
+			track: 0.2
+		},
+		{
+			family: 'var(--font-display)',
+			size: 0.88,
+			weight: 500,
+			style: 'normal',
+			caps: 'uppercase',
+			track: 0.12
+		}
+	];
+
 	$effect(() => {
 		if (!section || !grid) return;
 
@@ -46,10 +129,15 @@
 				if (i === ANCHOR) continue;
 
 				const row = rows[i];
+				const look = looks[Math.floor(Math.random() * looks.length)];
+
 				row.textContent = strip();
-				row.style.fontSize = `${(0.92 + Math.random() * 0.26).toFixed(3)}em`;
-				row.style.fontWeight = Math.random() > 0.76 ? '600' : '400';
-				row.style.letterSpacing = `${(Math.random() * 0.04 - 0.01).toFixed(3)}em`;
+				row.style.fontFamily = look.family;
+				row.style.fontSize = `${(look.size * (0.95 + Math.random() * 0.12)).toFixed(3)}em`;
+				row.style.fontWeight = `${look.weight}`;
+				row.style.fontStyle = look.style;
+				row.style.textTransform = look.caps;
+				row.style.letterSpacing = `${(look.track + Math.random() * 0.012).toFixed(3)}em`;
 				row.style.transform = `translateX(${(Math.random() * 16 - 8).toFixed(1)}%)`;
 			}
 
@@ -156,21 +244,37 @@
 
 	/* satu satunya yang tidak pernah berpindah dari tengah layar */
 	.hit {
+		position: relative;
+		z-index: 0;
 		white-space: nowrap;
 		color: var(--color-ink);
-		background-color: transparent;
+		background: none;
+		padding: 0 0.1em;
+	}
+
+	/* Sapuan stabilonya dibuat sebagai lapisan tersendiri di belakang huruf,
+	   sedikit lebih pendek dari tinggi baris, ujungnya membulat tidak rata,
+	   dan miring tipis seperti coretan tangan. */
+	.hit::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		inset: 17% -0.14em 13% -0.12em;
+		border-radius: 0.42em 0.2em 0.34em 0.26em / 0.7em 0.5em 0.6em 0.44em;
+		transform: rotate(-0.7deg) skewX(-1.5deg);
 		background-image: linear-gradient(
-			to right,
-			color-mix(in srgb, var(--color-blush) 95%, transparent),
-			color-mix(in srgb, var(--color-blush) 95%, transparent)
+			100deg,
+			color-mix(in srgb, var(--color-blush) 62%, transparent),
+			color-mix(in srgb, var(--color-blush) 96%, transparent) 18%,
+			color-mix(in srgb, var(--color-blush) 86%, transparent) 74%,
+			color-mix(in srgb, var(--color-blush) 58%, transparent)
 		);
 		background-repeat: no-repeat;
 		background-size: 0% 100%;
-		padding: 0.1em 0.22em;
-		margin: 0 -0.06em;
+		filter: blur(0.35px);
 		transition: background-size 1s cubic-bezier(0.42, 0.06, 0.2, 1) 200ms;
 	}
-	.hit.lit {
+	.hit.lit::before {
 		background-size: 100% 100%;
 	}
 

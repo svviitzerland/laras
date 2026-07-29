@@ -84,8 +84,7 @@
 		margin-top: -13px;
 		border-radius: 999px;
 		border: 1px solid color-mix(in srgb, var(--color-ink) 45%, transparent);
-		background: color-mix(in srgb, var(--color-ivory) 10%, transparent);
-		backdrop-filter: invert(6%);
+		background: color-mix(in srgb, var(--color-ink) 6%, transparent);
 		transition:
 			width 0.55s var(--ease-silk),
 			height 0.55s var(--ease-silk),

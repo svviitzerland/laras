@@ -174,7 +174,7 @@
 		background: color-mix(in srgb, var(--color-ivory) 72%, transparent);
 		border-color: color-mix(in srgb, var(--color-sand) 70%, transparent);
 		box-shadow: 0 30px 60px -45px rgba(60, 40, 35, 0.7);
-		backdrop-filter: blur(18px) saturate(1.1);
+		backdrop-filter: blur(10px);
 	}
 	header.compact.dark .shell {
 		background: color-mix(in srgb, var(--color-noir) 55%, transparent);
@@ -363,7 +363,7 @@
 		padding-inline: 1.4rem;
 		border-radius: 1.6rem;
 		background: color-mix(in srgb, var(--color-ivory) 96%, transparent);
-		backdrop-filter: blur(18px);
+		backdrop-filter: blur(10px);
 		transition:
 			max-height 0.9s var(--ease-silk),
 			box-shadow 0.9s var(--ease-silk);

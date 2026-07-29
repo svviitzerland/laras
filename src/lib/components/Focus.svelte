@@ -5,7 +5,7 @@
 	let grid = $state<HTMLElement | null>(null);
 	let lit = $state(false);
 
-	const ROWS = 17;
+	const ROWS = 13;
 	const ANCHOR = Math.floor(ROWS / 2);
 	const indexes = Array.from({ length: ROWS }, (_, i) => i);
 
@@ -114,8 +114,10 @@
 		for (let i = 0; i < rows.length; i++) {
 			if (i === ANCHOR) continue;
 			const far = Math.abs(i - ANCHOR);
-			rows[i].style.filter = `blur(${(far * 0.42).toFixed(2)}px)`;
-			rows[i].style.opacity = `${Math.max(0.24, 0.94 - far * 0.075).toFixed(2)}`;
+			// jari jari blur dibatasi, sebab biayanya naik cepat sekali dan
+			// baris terjauh toh sudah nyaris tidak terlihat karena redup
+			rows[i].style.filter = `blur(${Math.min(far * 0.45, 2.4).toFixed(2)}px)`;
+			rows[i].style.opacity = `${Math.max(0.2, 0.94 - far * 0.1).toFixed(2)}`;
 		}
 
 		/**
@@ -159,7 +161,7 @@
 			([entry]) => {
 				if (entry.isIntersecting) {
 					lit = true;
-					if (!calm && !beat) beat = window.setInterval(shuffle, 150);
+					if (!calm && !beat) beat = window.setInterval(shuffle, 180);
 				} else {
 					clearInterval(beat);
 					beat = 0;
@@ -223,6 +225,9 @@
 		overflow: hidden;
 		white-space: nowrap;
 		line-height: var(--row);
+		/* isinya berganti terus, jadi peramban diberi tahu bahwa penggambaran
+		   ulang cukup dibatasi di dalam kotak ini saja */
+		contain: content;
 	}
 
 	/* baris kalimat utama, tetap satu baris teks biasa seperti yang lain */

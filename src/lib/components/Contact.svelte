@@ -77,8 +77,13 @@
 		height: 38rem;
 		margin-left: -19rem;
 		border-radius: 999px;
-		background: color-mix(in srgb, var(--color-blush) 50%, transparent);
-		filter: blur(120px);
+		/* gradasi lingkaran, bukan blur, supaya ringan digambar */
+		background: radial-gradient(
+			circle at center,
+			color-mix(in srgb, var(--color-blush) 52%, transparent) 0%,
+			color-mix(in srgb, var(--color-blush) 34%, transparent) 45%,
+			transparent 72%
+		);
 	}
 
 	.wrap {

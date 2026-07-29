@@ -111,17 +111,24 @@
 		pointer-events: none;
 		mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
 	}
+	/* Cahaya latar memakai gradasi lingkaran, bukan lingkaran padat yang
+	   diberi blur. Hasilnya nyaris sama tetapi jauh lebih ringan, terutama
+	   di Safari yang mahal sekali menggambar blur berjari jari besar. */
 	.orb {
 		position: absolute;
 		border-radius: 999px;
-		filter: blur(120px);
 	}
 	.one {
 		top: -16rem;
 		right: -12rem;
 		width: 36rem;
 		height: 36rem;
-		background: color-mix(in srgb, var(--color-blush) 62%, transparent);
+		background: radial-gradient(
+			circle at center,
+			color-mix(in srgb, var(--color-blush) 62%, transparent) 0%,
+			color-mix(in srgb, var(--color-blush) 42%, transparent) 42%,
+			transparent 72%
+		);
 		animation: drift 21s ease-in-out infinite;
 	}
 	.two {
@@ -129,7 +136,12 @@
 		left: -14rem;
 		width: 32rem;
 		height: 32rem;
-		background: color-mix(in srgb, var(--color-sand) 68%, transparent);
+		background: radial-gradient(
+			circle at center,
+			color-mix(in srgb, var(--color-sand) 68%, transparent) 0%,
+			color-mix(in srgb, var(--color-sand) 45%, transparent) 44%,
+			transparent 74%
+		);
 		animation: drift 27s ease-in-out infinite reverse;
 	}
 

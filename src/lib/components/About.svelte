@@ -13,7 +13,7 @@
 	<div class="wrap" use:panel={{ depth: 0.05, fade: 0.45 }}>
 		<div class="top">
 			<div class="heading" use:parallax={{ speed: 46 }}>
-				<SectionHeading eyebrow="Tentang" title="Dua bahasa," italic="satu orang." />
+				<SectionHeading eyebrow="Tentang" title="Dari kelas" italic="ke panggung." />
 			</div>
 
 			<div class="prose">

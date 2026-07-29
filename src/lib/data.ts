@@ -70,31 +70,50 @@ export const facets = [
 ];
 
 /**
- * Petikan kalimat yang ditata seperti halaman buku. Nama Laras berdiri di
- * kolom tengah dan posisinya tidak pernah bergeser, sementara kalimat di
- * kiri dan kanannya berganti pada tiap baris. Nama itulah yang disapu
- * stabilo ketika barisnya masuk layar.
+ * Kumpulan kalimat untuk bagian sorot bergaya koran. Kalimat kalimat ini
+ * diacak lalu diganti dengan tempo cepat sebagai latar, sementara nama
+ * Laras di tengah layar tetap diam.
  *
- * Ganti kalimatnya dengan yang sesuai. Yang perlu dijaga hanya satu hal,
- * potongan kiri diakhiri tanpa titik dan potongan kanan melanjutkannya.
+ * Isinya bebas ditambah atau diganti. Semakin banyak kalimatnya, semakin
+ * kaya pergantian yang terlihat.
  */
-export const refrain = [
-	{
-		before: 'Mikrofon berpindah ke tangan',
-		after: 'dan tempo acara langsung terjaga.'
-	},
-	{
-		before: 'Panitia biasanya memanggil',
-		after: 'sejak tahap penyusunan rundown.'
-	},
-	{
-		before: 'Tim pengembang mengenal',
-		after: 'sebagai orang yang paham dua sisi panggung.'
-	},
-	{
-		before: 'Di susunan acara, nama',
-		after: 'berarti pembukaan yang ringkas dan hangat.'
-	}
+export const paperLines = [
+	'Sebelum lampu ruangan dinyalakan, panggung masih kosong dan naskah dibaca sekali lagi.',
+	'Susunan acara berubah di menit terakhir, dan tidak ada tamu yang menyadarinya.',
+	'Ada tempo yang dijaga menit demi menit sampai acara resmi ditutup.',
+	'Setiap ruangan punya karakter sendiri dan harus dibaca lebih dulu.',
+	'Naskah pembuka disusun ulang agar cocok dengan tamu yang hadir.',
+	'Laptop ditutup setelah sebuah fitur dirilis, mikrofon menyala keesokan paginya.',
+	'Tim pengembang tahu betul siapa yang paham teknis di balik panggung.',
+	'Peserta seminar mengingat suara yang menjaga ritme dari menit pertama.',
+	'Enam jam panggung terbuka berlalu meski cuaca berubah dua kali.',
+	'Pembukaan yang ringkas ternyata lebih diingat daripada sambutan yang panjang.',
+	'Antarmuka yang rapi lahir dari persiapan yang sama telitinya dengan rundown.',
+	'Jeda yang canggung selalu bisa dihindari kalau ruangan sudah terbaca.',
+	'Moderator yang baik membuat pembicara terdengar lebih runtut.',
+	'Dua bahasa dipakai bergantian tanpa membuat penonton kehilangan alur.',
+	'Latihan dilakukan jauh sebelum hari pelaksanaan, bukan di ruang tunggu.',
+	'Kesan pertama dibangun dalam tiga puluh detik yang pertama.',
+	'Panitia menyerahkan mikrofon, lalu ruangan ikut menyesuaikan diri.',
+	'Cara berpikir runtut ternyata sama bergunanya di depan mikrofon.',
+	'Suara, jeda, dan tatapan mata bekerja bersama di atas panggung.',
+	'Acara berjalan sesuai rencana karena setiap kemungkinan sudah disiapkan.'
+];
+
+/**
+ * Kalimat kalimat yang memuat nama Laras. Salah satunya dipilih acak untuk
+ * baris tengah, lalu barisnya digeser sampai nama itu jatuh tepat di titik
+ * tengah layar. Jadi namanya benar benar berada di dalam kalimat, bukan
+ * ditempel di atasnya.
+ *
+ * Syaratnya satu, tiap kalimat harus memuat kata Laras persis sekali.
+ */
+export const paperNameLines = [
+	'Panitia memanggil Laras ketika susunan acara berubah di menit terakhir.',
+	'Tim pengembang mengenal Laras sebagai orang yang paham dua sisi panggung.',
+	'Peserta seminar mengingat Laras sebagai suara yang menjaga ritme acara.',
+	'Mikrofon berpindah ke tangan Laras dan tempo acara langsung terjaga.',
+	'Di susunan acara, nama Laras berarti pembukaan yang ringkas dan hangat.'
 ];
 
 export type GalleryItem = {

@@ -8,7 +8,7 @@
 	import Ticker from '$lib/components/Ticker.svelte';
 	import About from '$lib/components/About.svelte';
 	import Hall from '$lib/components/Hall.svelte';
-	import Refrain from '$lib/components/Refrain.svelte';
+	import Focus from '$lib/components/Focus.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Lightbox from '$lib/components/Lightbox.svelte';
@@ -40,7 +40,7 @@
 		<About />
 		<!-- peralihan gelap dan terang ditangani di dalam Hall sendiri -->
 		<Hall />
-		<Refrain />
+		<Focus />
 		<Timeline />
 		<Seam from="var(--color-mist)" to="var(--color-ivory)" height="14vh" />
 		<Contact />

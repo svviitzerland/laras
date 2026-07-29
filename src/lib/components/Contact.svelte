@@ -6,6 +6,8 @@
 	const year = new Date().getFullYear();
 </script>
 
+<!-- Semua tautan di bagian ini memang menuju ke luar situs, bukan ke halaman lain. -->
+<!-- eslint-disable svelte/no-navigation-without-resolve -->
 <section id="kontak" class="close">
 	<div class="halo" aria-hidden="true">
 		<span class="orb" use:parallax={{ speed: -70 }}></span>
@@ -22,8 +24,8 @@
 		</h2>
 
 		<p class="say reveal" use:reveal={{ delay: 220 }}>
-			Tersedia untuk pembawa acara, moderator, dan pengisi suara. Silakan kirim surel untuk
-			menanyakan jadwal, kebutuhan acara, dan detail kerja sama.
+			Terbuka untuk membawakan acara, membantu kepanitiaan, atau berdiskusi soal teknologi. Kirim
+			surel dan ceritakan acaranya.
 		</p>
 
 		<a
@@ -38,7 +40,6 @@
 
 		<div class="socials reveal" use:reveal={{ delay: 420 }}>
 			{#each profile.socials as social (social.label)}
-				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- tautan ke luar situs -->
 				<a href={social.href} target="_blank" rel="noreferrer noopener">{social.label}</a>
 			{/each}
 		</div>

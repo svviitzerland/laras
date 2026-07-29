@@ -1,6 +1,10 @@
 /**
  * Semua isi situs ada di file ini, jadi cukup ubah teks dan foto di sini.
  *
+ * Isinya disusun dari profil resmi Larasati. Angka angka yang dipakai juga
+ * diambil apa adanya dari sana, bukan karangan, supaya tetap bisa
+ * dipertanggungjawabkan kalau ada yang bertanya.
+ *
  * Foto galeri disimpan di `static/gallery/` lalu ditulis sebagai
  * `/gallery/nama-berkas.jpg` pada properti `src`.
  */
@@ -10,38 +14,39 @@ export const profile = {
 	shortName: 'Larasati',
 	/** dipakai sebagai monogram di navigasi */
 	initials: 'Laras',
-	role: 'IT Enthusiast dan Master of Ceremony',
+	role: 'Mahasiswa Teknologi Informasi dan Master of Ceremony',
+	location: 'Bandung, Jawa Barat',
 	intro:
-		'Saya menjalani dua bidang sekaligus, teknologi informasi dan pembawa acara. Keduanya menuntut hal yang sama, persiapan yang rapi dan kemampuan membaca situasi.',
+		'Saya belajar Teknologi Informasi di Telkom University, mengajar algoritma pemrograman sebagai asisten dosen, dan berdiri di depan mikrofon ketika himpunan punya acara. Ketiganya menuntut hal yang sama, persiapan yang rapi dan kemampuan membaca ruangan.',
 	bio: [
-		'Berlatar pendidikan teknologi informasi, saya terbiasa membedah masalah menjadi bagian kecil yang bisa diselesaikan satu per satu. Kebiasaan itu ternyata sama bergunanya ketika menyusun rundown acara.',
-		'Di atas panggung saya menemukan sisi lain dari diri saya. Menjadi MC bukan sekadar membaca susunan acara, tapi menjaga tempo, mencairkan jeda, dan memastikan setiap orang di ruangan merasa dilibatkan.',
-		'Sampai hari ini saya menikmati keduanya. Menutup laptop setelah rilis fitur, lalu berdiri di depan mikrofon keesokan harinya.'
+		'Sejak Januari 2025 saya menjadi asisten dosen Algoritma Pemrograman di Universitas Telkom, mendampingi lebih dari empat puluh mahasiswa setiap semester. Sebelumnya saya asisten praktikum untuk mata kuliah yang sama, menemani mereka membedah logika dan menelusuri kesalahan kode baris demi baris.',
+		'Di Himpunan Mahasiswa Teknologi Informasi saya bekerja di Divisi Hubungan Masyarakat. Dari sana saya memimpin program Bina Desa yang melibatkan sekitar seratus lima puluh peserta, menjadi Sekretaris I kaderisasi PROXIMITI untuk dua ratus mahasiswa, dan membawakan sekitar lima acara resmi sebagai pembawa acara.',
+		'Kebiasaan berdiri di depan orang banyak sudah dimulai jauh sebelum kuliah, dari Ketua OSIS di SMKN 1 Abang sampai Forum Genre Provinsi Bali. Latar multimedia dan pengalaman sebagai desainer grafis membuat saya terbiasa memikirkan dua hal sekaligus, isi acaranya dan bagaimana ia terlihat.'
 	],
-	email: 'halo@larasati.id',
+	email: 'larasati.puan@gmail.com',
 	socials: [
-		{ label: 'Instagram', href: 'https://instagram.com/' },
-		{ label: 'LinkedIn', href: 'https://linkedin.com/in/' },
-		{ label: 'GitHub', href: 'https://github.com/' }
+		{ label: 'Instagram', href: 'https://www.instagram.com/larasati.puan/' },
+		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/larasatimaharani' },
+		{ label: 'GitHub', href: 'https://github.com/larasatiPuan' }
 	]
 };
 
 export const stats = [
-	{ value: 60, suffix: '+', label: 'Acara dibawakan' },
-	{ value: 5, suffix: ' thn', label: 'Jam terbang panggung' },
-	{ value: 20, suffix: '+', label: 'Proyek dan kolaborasi' },
-	{ value: 12, suffix: 'k', label: 'Total audiens' }
+	{ value: 40, suffix: '+', label: 'Mahasiswa dibimbing tiap semester' },
+	{ value: 200, suffix: '', label: 'Peserta kaderisasi PROXIMITI' },
+	{ value: 150, suffix: '', label: 'Peserta program Bina Desa' },
+	{ value: 5, suffix: '', label: 'Acara resmi dibawakan' }
 ];
 
 export const tickerWords = [
 	'Master of Ceremony',
-	'Public Speaking',
-	'Front End Development',
-	'UI dan UX',
-	'Moderator',
-	'Event Host',
-	'Data dan Analitik',
-	'Voice Over'
+	'Asisten Dosen',
+	'Algoritma Pemrograman',
+	'Java',
+	'Public Relations',
+	'Pengembangan Web',
+	'Desain Grafis',
+	'Public Speaking'
 ];
 
 /** Dua sisi profesi yang ditampilkan berdampingan. */
@@ -50,21 +55,28 @@ export const facets = [
 		no: '01',
 		title: 'Di Balik Layar',
 		subtitle: 'Teknologi',
-		text: 'Merancang dan membangun antarmuka yang rapi, cepat, dan enak dipakai. Terbiasa bekerja bersama tim lintas peran, dari desainer sampai pemangku kepentingan.',
-		skills: ['JavaScript', 'TypeScript', 'Svelte dan React', 'UI Engineering', 'Figma', 'SQL']
+		text: 'Mengajarkan logika pemrograman kepada mahasiswa, menelusuri kesalahan kode bersama mereka, dan menilai hasil praktikum. Di luar kelas, saya belajar pengembangan web dan sistem tertanam.',
+		skills: [
+			'Java',
+			'Algoritma dan Struktur Data',
+			'Pengembangan Web',
+			'Sistem Tertanam',
+			'Desain Grafis',
+			'Multimedia'
+		]
 	},
 	{
 		no: '02',
 		title: 'Di Atas Panggung',
 		subtitle: 'Panggung dan Suara',
-		text: 'Membawakan acara formal maupun santai, mulai dari seminar kampus, gelar wicara, wisuda, sampai peluncuran produk. Naskah disusun sendiri dan gaya dibawa menyesuaikan karakter acara.',
+		text: 'Membawakan acara resmi himpunan, memimpin program pengabdian di desa, dan mengurus kaderisasi ratusan mahasiswa baru. Semuanya berawal dari satu kebiasaan, berani memegang mikrofon.',
 		skills: [
-			'Formal dan Semi Formal',
-			'Dwibahasa',
-			'Moderator Diskusi',
-			'Penulisan Naskah',
-			'Improvisasi',
-			'Voice Over'
+			'Master of Ceremony',
+			'Public Speaking',
+			'Hubungan Masyarakat',
+			'Manajemen Acara',
+			'Kaderisasi',
+			'Liaison Officer'
 		]
 	}
 ];
@@ -73,47 +85,42 @@ export const facets = [
  * Kumpulan kalimat untuk bagian sorot bergaya koran. Kalimat kalimat ini
  * diacak lalu diganti dengan tempo cepat sebagai latar, sementara nama
  * Laras di tengah layar tetap diam.
- *
- * Isinya bebas ditambah atau diganti. Semakin banyak kalimatnya, semakin
- * kaya pergantian yang terlihat.
  */
 export const paperLines = [
-	'Sebelum lampu ruangan dinyalakan, panggung masih kosong dan naskah dibaca sekali lagi.',
-	'Susunan acara berubah di menit terakhir, dan tidak ada tamu yang menyadarinya.',
-	'Ada tempo yang dijaga menit demi menit sampai acara resmi ditutup.',
-	'Setiap ruangan punya karakter sendiri dan harus dibaca lebih dulu.',
-	'Naskah pembuka disusun ulang agar cocok dengan tamu yang hadir.',
-	'Laptop ditutup setelah sebuah fitur dirilis, mikrofon menyala keesokan paginya.',
-	'Tim pengembang tahu betul siapa yang paham teknis di balik panggung.',
-	'Peserta seminar mengingat suara yang menjaga ritme dari menit pertama.',
-	'Enam jam panggung terbuka berlalu meski cuaca berubah dua kali.',
-	'Pembukaan yang ringkas ternyata lebih diingat daripada sambutan yang panjang.',
+	'Empat puluh mahasiswa duduk menunggu sesi responsi dimulai pada sore itu.',
+	'Logika pemrograman dibedah pelan pelan sampai semua orang paham alurnya.',
+	'Kesalahan kode ditelusuri baris demi baris hingga penyebabnya ketemu.',
+	'Empat belas jurnal praktikum diperiksa satu per satu sebelum tenggat.',
+	'Seratus lima puluh peserta hadir dalam program Bina Desa di Pasir Endah.',
+	'Dua ratus mahasiswa baru dikawal melewati rangkaian kaderisasi.',
+	'Mikrofon dinyalakan, susunan acara dibaca ulang, lalu ruangan menyimak.',
+	'Rundown berubah di menit terakhir dan tidak ada tamu yang menyadarinya.',
+	'Divisi hubungan masyarakat menyiapkan setiap detail acara resmi himpunan.',
 	'Antarmuka yang rapi lahir dari persiapan yang sama telitinya dengan rundown.',
-	'Jeda yang canggung selalu bisa dihindari kalau ruangan sudah terbaca.',
-	'Moderator yang baik membuat pembicara terdengar lebih runtut.',
-	'Dua bahasa dipakai bergantian tanpa membuat penonton kehilangan alur.',
-	'Latihan dilakukan jauh sebelum hari pelaksanaan, bukan di ruang tunggu.',
+	'Java dipakai untuk menjelaskan konsep yang tadinya terasa berat.',
+	'Desain poster dikerjakan malam hari, presentasi dibawakan keesokan paginya.',
+	'Ketua OSIS belajar berbicara di depan ratusan siswa sejak bangku sekolah.',
+	'Forum Genre mengajarkan cara menyampaikan pesan agar benar benar sampai.',
+	'Sistem tertanam dipelajari bersama teman teman satu kelompok studi.',
 	'Kesan pertama dibangun dalam tiga puluh detik yang pertama.',
-	'Panitia menyerahkan mikrofon, lalu ruangan ikut menyesuaikan diri.',
-	'Cara berpikir runtut ternyata sama bergunanya di depan mikrofon.',
-	'Suara, jeda, dan tatapan mata bekerja bersama di atas panggung.',
+	'Setiap ruangan punya karakter sendiri dan harus dibaca lebih dulu.',
+	'Pembukaan yang ringkas ternyata lebih diingat daripada sambutan panjang.',
+	'Bandung menjadi tempat semua kebiasaan itu bertemu dalam satu jadwal.',
 	'Acara berjalan sesuai rencana karena setiap kemungkinan sudah disiapkan.'
 ];
 
 /**
- * Kalimat kalimat yang memuat nama Laras. Salah satunya dipilih acak untuk
- * baris tengah, lalu barisnya digeser sampai nama itu jatuh tepat di titik
- * tengah layar. Jadi namanya benar benar berada di dalam kalimat, bukan
- * ditempel di atasnya.
+ * Kalimat yang memuat nama Laras. Salah satunya dipilih untuk baris tengah,
+ * lalu barisnya digeser sampai nama itu jatuh tepat di titik tengah layar.
  *
  * Syaratnya satu, tiap kalimat harus memuat kata Laras persis sekali.
  */
 export const paperNameLines = [
-	'Panitia memanggil Laras ketika susunan acara berubah di menit terakhir.',
-	'Tim pengembang mengenal Laras sebagai orang yang paham dua sisi panggung.',
-	'Peserta seminar mengingat Laras sebagai suara yang menjaga ritme acara.',
-	'Mikrofon berpindah ke tangan Laras dan tempo acara langsung terjaga.',
-	'Di susunan acara, nama Laras berarti pembukaan yang ringkas dan hangat.'
+	'Empat puluh mahasiswa tiap semester belajar algoritma bersama Laras di kelas responsi.',
+	'Himpunan menyerahkan mikrofon kepada Laras ketika acara resmi harus dibuka.',
+	'Program Bina Desa dengan seratus lima puluh peserta dipimpin oleh Laras sebagai ketua.',
+	'Dua ratus mahasiswa baru dikawal Laras melewati rangkaian kaderisasi PROXIMITI.',
+	'Di daftar asisten dosen Algoritma Pemrograman, nama Laras sudah tercatat sejak 2025.'
 ];
 
 export type GalleryItem = {
@@ -134,104 +141,104 @@ export const gallery: GalleryItem[] = [
 	{
 		id: 'g1',
 		no: 'I',
-		title: 'Panggung Pertama Tahun Ini',
-		event: 'Tech Summit Nasional',
-		role: 'Master of Ceremony',
-		venue: 'Balai Sidang, Jakarta',
+		title: 'Merajut Asa Teknologi',
+		event: 'Bina Desa, HMTI Telkom University',
+		role: 'Ketua Pelaksana',
+		venue: 'Kelurahan Pasir Endah, Bandung',
 		year: '2025',
-		audience: '1.200 audiens',
-		note: 'Membuka rangkaian acara dua hari dan memandu sesi utama bersama tiga pembicara internasional.',
+		audience: '150 peserta',
+		note: 'Memimpin program pengabdian yang membawa pengenalan teknologi langsung ke warga desa, dari penyusunan konsep sampai hari pelaksanaan.',
 		src: '/gallery/01.svg',
 		shape: 'portrait'
 	},
 	{
 		id: 'g2',
 		no: 'II',
-		title: 'Suara di Ruang Diskusi',
-		event: 'Seminar Perempuan dan Teknologi',
-		role: 'Moderator',
-		venue: 'Auditorium Kampus',
+		title: 'Kaderisasi Dua Ratus Wajah Baru',
+		event: 'PROXIMITI 2025',
+		role: 'Sekretaris I',
+		venue: 'Telkom University',
 		year: '2025',
-		audience: '400 audiens',
-		note: 'Memandu diskusi panel tentang keterwakilan perempuan di industri teknologi.',
+		audience: '200 mahasiswa',
+		note: 'Menyusun administrasi dan alur kaderisasi untuk mahasiswa angkatan 2024, sekaligus menjaga rangkaian acaranya tetap berjalan sesuai rencana.',
 		src: '/gallery/02.svg',
 		shape: 'landscape'
 	},
 	{
 		id: 'g3',
 		no: 'III',
-		title: 'Malam Penghargaan',
-		event: 'Anugerah Inovasi Mahasiswa',
+		title: 'Di Depan Mikrofon Himpunan',
+		event: 'Acara Resmi HMTI Telkom University',
 		role: 'Master of Ceremony',
-		venue: 'Grand Ballroom',
-		year: '2024',
-		audience: '800 audiens',
-		note: 'Acara semi formal dwibahasa dengan susunan acara yang berubah di menit terakhir.',
+		venue: 'Telkom University',
+		year: '2025',
+		audience: '5 acara resmi',
+		note: 'Membawakan acara resmi himpunan sekaligus mewakili organisasi, dari pembukaan program sampai sesi penutupan.',
 		src: '/gallery/03.svg',
 		shape: 'portrait'
 	},
 	{
 		id: 'g4',
 		no: 'IV',
-		title: 'Peluncuran Produk',
-		event: 'Product Launch Startup Lokal',
-		role: 'Host',
-		venue: 'Creative Hub',
-		year: '2024',
-		audience: '250 audiens',
-		note: 'Memandu demo produk sekaligus sesi tanya jawab langsung dengan tim pengembang.',
+		title: 'Kelas Responsi Sore Hari',
+		event: 'Asisten Dosen Algoritma Pemrograman',
+		role: 'Asisten Dosen',
+		venue: 'Universitas Telkom',
+		year: '2025',
+		audience: '40+ mahasiswa',
+		note: 'Menemani mahasiswa memahami logika pemrograman lewat sesi responsi tambahan, lalu memeriksa tugas dan hasil praktikum mereka.',
 		src: '/gallery/04.svg',
 		shape: 'square'
 	},
 	{
 		id: 'g5',
 		no: 'V',
-		title: 'Pagi di Wisuda',
-		event: 'Upacara Wisuda',
-		role: 'Master of Ceremony',
-		venue: 'Gedung Serba Guna',
+		title: 'Menelusuri Kesalahan Kode',
+		event: 'Praktikum Algoritma Pemrograman',
+		role: 'Asisten Praktikum',
+		venue: 'Informatics Laboratory',
 		year: '2024',
-		audience: '2.000 audiens',
-		note: 'Acara paling formal yang pernah saya bawakan, dengan protokol yang sangat ketat.',
+		audience: '14 modul jurnal',
+		note: 'Mendampingi lebih dari empat puluh mahasiswa menyelesaikan modul terbimbing dan membantu mencari sumber kesalahan di setiap sesi.',
 		src: '/gallery/05.svg',
 		shape: 'landscape'
 	},
 	{
 		id: 'g6',
 		no: 'VI',
-		title: 'Kelas Berbagi',
-		event: 'Workshop Public Speaking',
-		role: 'Pembicara',
-		venue: 'Ruang Kelas Bersama',
-		year: '2023',
-		audience: '120 peserta',
-		note: 'Berbagi cara menyusun pembukaan yang tidak membosankan dalam tiga puluh detik pertama.',
+		title: 'Penyambut Mahasiswa Baru',
+		event: 'PKKMB X Megabit 7.0',
+		role: 'Liaison Officer',
+		venue: 'Telkom University',
+		year: '2024',
+		audience: 'Mahasiswa baru',
+		note: 'Menjadi penghubung antara panitia dan peserta selama rangkaian pengenalan kampus berlangsung.',
 		src: '/gallery/06.svg',
 		shape: 'portrait'
 	},
 	{
 		id: 'g7',
 		no: 'VII',
-		title: 'Panggung Terbuka',
-		event: 'Festival Musik Kampus',
-		role: 'Stage Host',
-		venue: 'Lapangan Utama',
-		year: '2023',
-		audience: '3.000 audiens',
-		note: 'Menjaga tempo panggung terbuka selama enam jam di bawah cuaca yang tidak bisa ditebak.',
+		title: 'Belajar Membangun Halaman',
+		event: 'GDSC Mini Bootcamp Website Development',
+		role: 'Peserta',
+		venue: 'GDSC Telkom University',
+		year: '2024',
+		audience: 'Pelatihan intensif',
+		note: 'Mendalami dasar pengembangan web, praktik merancang antarmuka, dan penerapan teknologi frontend masa kini.',
 		src: '/gallery/07.svg',
 		shape: 'square'
 	},
 	{
 		id: 'g8',
 		no: 'VIII',
-		title: 'Studio Kecil',
-		event: 'Siniar dan Voice Over',
-		role: 'Pengisi Suara',
-		venue: 'Studio Rekaman',
-		year: '2023',
-		audience: 'Sesi rekaman',
-		note: 'Proyek pengisian suara untuk video profil perusahaan dan siniar kampus.',
+		title: 'Suara dari Bali',
+		event: 'Forum Genre Provinsi Bali',
+		role: 'Divisi Komunikasi dan Informasi',
+		venue: 'Bali',
+		year: '2021',
+		audience: '2 tahun',
+		note: 'Menyusun dan menyampaikan pesan edukasi untuk remaja, kebiasaan awal yang kemudian terbawa sampai ke panggung kampus.',
 		src: '/gallery/08.svg',
 		shape: 'landscape'
 	}
@@ -240,28 +247,38 @@ export const gallery: GalleryItem[] = [
 export const timeline = [
 	{
 		year: '2025',
-		title: 'Master of Ceremony di Tech Summit Nasional',
-		text: 'Memandu acara utama dua hari untuk lebih dari seribu peserta.'
+		title: 'Asisten Dosen Algoritma Pemrograman',
+		text: 'Universitas Telkom. Membimbing lebih dari empat puluh mahasiswa tiap semester lewat kelas responsi, lalu menilai tugas dan hasil praktikum mereka.'
+	},
+	{
+		year: '2025',
+		title: 'Divisi Hubungan Masyarakat HMTI',
+		text: 'Ketua pelaksana Bina Desa untuk seratus lima puluh peserta, Sekretaris I PROXIMITI untuk dua ratus mahasiswa, sekaligus pembawa acara di lima acara resmi.'
 	},
 	{
 		year: '2024',
-		title: 'Front End Developer pada proyek kolaborasi',
-		text: 'Membangun antarmuka aplikasi internal bersama tim lintas jurusan.'
+		title: 'Asisten Praktikum dan Liaison Officer',
+		text: 'Mendampingi praktikum Algoritma Pemrograman di Informatics Laboratory, dan menjadi penghubung peserta pada PKKMB X Megabit 7.0.'
 	},
 	{
 		year: '2024',
-		title: 'Moderator rangkaian seminar kampus',
-		text: 'Menjadi moderator tetap untuk enam sesi gelar wicara sepanjang tahun.'
+		title: 'Kelompok Studi Hardware and Embedded System',
+		text: 'Mendalami sistem tertanam bersama kelompok studi, melengkapi sisi perangkat keras dari ilmu yang dipelajari di kelas.'
 	},
 	{
 		year: '2023',
-		title: 'Fasilitator workshop public speaking',
-		text: 'Merancang materi pelatihan berbicara di depan umum untuk mahasiswa baru.'
+		title: 'Mulai kuliah dan bergabung dengan GDSC',
+		text: 'Masuk Teknologi Informasi Telkom University, lalu mengikuti bootcamp pengembangan web di Google Developer Student Club.'
 	},
 	{
 		year: '2022',
-		title: 'Langkah pertama di atas panggung',
-		text: 'Membawakan acara internal himpunan, awal dari semuanya.'
+		title: 'Ketua OSIS SMKN 1 Abang',
+		text: 'Memimpin organisasi siswa selama satu tahun setelah sebelumnya menjadi wakil ketua, sambil bekerja sebagai desainer grafis di Oka Print.'
+	},
+	{
+		year: '2021',
+		title: 'Forum Genre Bali dan PIK-R',
+		text: 'Mengurus komunikasi, informasi, dan edukasi untuk remaja di tingkat kabupaten dan provinsi selama dua tahun.'
 	}
 ];
 

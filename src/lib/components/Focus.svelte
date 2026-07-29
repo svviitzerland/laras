@@ -217,6 +217,18 @@
 		color: var(--color-ink);
 	}
 
+	/* Di layar sempit halamannya diperbesar, seolah dilihat lebih dekat,
+	   supaya nama di tengah tetap terbaca jelas. */
+	@media (max-width: 700px) {
+		.rows {
+			--row: clamp(2.5rem, 7.2vh, 3.6rem);
+			font-size: clamp(1.35rem, 4.6vw, 1.8rem);
+		}
+		.line {
+			font-size: 1.4em;
+		}
+	}
+
 	.row {
 		display: flex;
 		align-items: center;

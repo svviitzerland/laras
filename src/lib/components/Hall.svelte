@@ -27,6 +27,10 @@
 
 	const clamp = (v: number, a: number, b: number) => Math.min(Math.max(v, a), b);
 	const ratio = { portrait: '3 / 4', landscape: '4 / 3', square: '1 / 1' };
+	// Lebar bingkai dihitung sendiri dari angka perbandingan ini. Menyerahkan
+	// perhitungannya pada `aspect-ratio` membuat Safari melebarkan bingkai
+	// jauh melebihi gambarnya.
+	const ratioOf = { portrait: 0.75, landscape: 1.3333, square: 1 };
 	const hang = ['0rem', '2.5rem', '1rem', '3.25rem'];
 
 	async function measure() {
@@ -158,7 +162,11 @@
 
 					<span class="frame">
 						<span class="mat">
-							<span class="crop" style:aspect-ratio={ratio[item.shape]}>
+							<span
+								class="crop"
+								style:aspect-ratio={ratio[item.shape]}
+								style:--ar={ratioOf[item.shape]}
+							>
 								<img src={item.src} alt="{item.title} pada {item.event}" loading="lazy" />
 							</span>
 						</span>
@@ -388,10 +396,11 @@
 		transform: translateY(var(--hang));
 	}
 	.pinned .crop {
-		display: inline-block;
-		vertical-align: top;
+		display: block;
 		height: 40svh;
-		width: auto;
+		/* lebarnya dihitung tegas, bukan diserahkan pada aspect-ratio,
+		   supaya sama persis di semua peramban */
+		width: calc(40svh * var(--ar, 1));
 	}
 	.pinned .plaque {
 		max-width: 21rem;
